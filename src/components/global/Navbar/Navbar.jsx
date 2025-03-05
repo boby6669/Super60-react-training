@@ -18,6 +18,14 @@ const navData=[
 const Navbar = () => {
   return (
     <div>
+        <div className='bg-slate-900 flex justify-between p-2 px-7 text-white items-center'>
+            <div>
+                <p className="text-sm">Call us: 123-456-7890</p>
+            </div>
+            <div>
+                <Link to ="/admin-login" className='text-lg underline font-medium'>Admin?</Link>
+            </div>
+        </div>
         <header className="shadow-md">
             <nav className="h-24 flex justify-between items-center px-7">
                 <div>

@@ -234,6 +234,8 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import NotFound from "./pages/NotFound"
+import AdminNav from "./components/global/AdminNav/AdminNAv"
+import AdminLogin from "./pages/AdminLogin"
 
 
 // step 1
@@ -245,6 +247,18 @@ const Layout = ()=>{
         <Outlet/>
       </div>
       <footer className="bg-black p-5 text-center text-white py-7">Footer here</footer>
+    </>
+  )
+}
+
+const AdminLayout = ()=>{
+  return(
+    <>
+      <AdminNav/>
+      <div>
+        <Outlet/>
+      </div>
+      <footer className="bg-black py-7 px-4 text-center text-white text-xl">Admin FOOTER</footer>
     </>
   )
 }
@@ -271,9 +285,35 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFound/>
+      },
+      {
+        path: '/admin-login',
+        element: <AdminLogin user={false}/>
       }
     ]
   },
+  {
+    path: '/admin',
+    element: <AdminLayout/>,
+    children:[
+      {
+        path: '/admin',
+        element: <div className="h-screen bg-pink-800 text-white text-5xl text-center flex justify-between items-center">Admin Dashbaord</div>
+      },
+      {
+        path: '/admin/sales',
+        element: <div className="h-screen bg-blue-800 text-white text-5xl text-center flex justify-between items-center">Admin Sales</div>
+      },
+      {
+        path: '/admin/statistics',
+        element: <div className="h-screen bg-purple-600 text-white text-5xl text-center flex justify-between items-center">Admin Statistics</div>
+      },
+      {
+        path: '/admin/profile',
+        element: <div className="h-screen bg-cyan-700 text-white text-5xl text-center flex justify-between items-center">Admin Profile</div>
+      }
+    ]
+  }
   
 ])
 
