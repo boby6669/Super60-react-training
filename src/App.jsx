@@ -230,12 +230,12 @@
 import React from "react"
 import {Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from "./components/global/Navbar/Navbar"
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Contact from "./pages/Contact"
-import NotFound from "./pages/NotFound"
+import Home from "../../practice1/src/pages/Home"
+import About from "../../practice1/src/pages/About"
+import Contact from "../../practice1/src/pages/Contact"
+import NotFound from "../../practice1/src/pages/NotFound"
 import AdminNav from "./components/global/AdminNav/AdminNAv"
-import AdminLogin from "./pages/AdminLogin"
+import AdminLogin from "../../practice1/src/pages/AdminLogin"
 
 
 // step 1
